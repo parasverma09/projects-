@@ -1,0 +1,40 @@
+STEP 1: install scikit-image is using pip 
+pip install -U scikit-image
+
+STEP 2:
+# Python3 program to process 
+# images using skikit-image 
+# importing data from skimage 
+from skimage import data 
+camera = data.camera() 
+# An image with 512 rows 
+# and 512 columns 
+type(camera) 
+print(camera.shape) 
+STEP 3:skimage.data submodule provides a set of functions returning example images.
+
+# Python3 program to process 
+# images using skikit-image 
+# importing filters and 
+# data from skimage 
+from skimage import filters 
+from skimage import data 
+# Predefined function to fetch data 
+coins = data.coins() 
+# way to find threshold 
+threshold_value = filters.threshold_otsu(coins) 
+print(threshold_value) 
+STEP 4: Load own images as NumPy arrays from image files.
+
+# Python3 program to process 
+# images using skikit-image 
+import os 
+# importing io from skimage 
+import skimage 
+from skimage import io 
+# way to load car image from file 
+file = os.path.join(skimage.data_dir, 'cc.jpg') 
+cars = io.imread(file) 
+# way to show the input image 
+io.imshow(cars) 
+io.show() 
